@@ -1,0 +1,16 @@
+at+uinit=1
+at+usessioninit=111111,0
+at+ucfg=111111,18,1 //RFRAME_CONFIG, kUWB_RfFrameConfig_Sfd_Sts
+at+ucfg=111111,2,0 //STS_CONFIG, kUWB_StsConfig_StaticSts
+at+ucfg=111111,1,0 //RANGING_ROUND_USAGE, kUWB_RangingMethod_TDoA
+at+ucfg=111111,9,200 //RANGING_INTERVAL, 200
+at+ucfg=111111,51,0// BLINK_RANDOM_INTERVAL, 0
+at+ucfg=111111,14,1 //RNG_DATA_NTF, 1
+at+ucfg=111111,21,0 //SFD_ID, 0
+at+ucfg=111111,4,9 //CHANNEL_NUMBER, 9
+at+ucfg=111111,20,10 //PREAMBLE_CODE_INDEX, 10
+at+ucfg=111111,11,0 //MAC_FCS_TYPE, 0
+at+ucfg //apply all params above
+at+urngparams=111111,1,0,0,1,0,11,00 //sessionID,kUWB_MultiNodeMode_OnetoMany,kUWB_DeviceRole_Responder,kUWB_DeviceType_Controlee,noOfControlees,macAddrMode,srcMac,dstMac
+at+urngstart=111111,1
+

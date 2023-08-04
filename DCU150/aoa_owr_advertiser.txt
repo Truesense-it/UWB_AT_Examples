@@ -1,0 +1,16 @@
+at+uinit=1
+at+usessioninit=111111,0
+at+uappcommoncfg=111111,0
+at+ucfg=111111,18,1 //RFRAME_CONFIG, kUWB_RfFrameConfig_Sfd_Sts
+at+ucfg=111111,1,6 //RANGING_ROUND_USAGE, kUWB_RangingRoundUsage_OWR_AOA
+at+ucfg=111111,71,10 //MIN_FRAMES_PER_RR, 10
+at+ucfg=111111,72,87 //MTU_SIZE, 87
+at+ucfg=111111,73,2 //INTER_FRAME_INTERVAL, 2
+at+ucfg=111111,25,0 //DATA_REPETITION_COUNT, 0
+at+ucfg=111111,58134,12 //58134 is INBAND_DATA_TX_BLOCK_SIZE command (we don't send data in RX demo)
+at+ucfg=111111,58135,0 //58135 is INBAND_DATA_RX_BLOCK_SIZE command 
+at+ucfg=111111,14,1 //RNG_DATA_NTF, kUWB_EnableRange_Data_Ntf
+at+ucfg //apply all params above
+at+urngparams=111111,1,1,1,1,0,11,22 //sessionID, kUWB_MultiNodeMode_OnetoMany,kUWB_DeviceRole_Initiator,kUWB_DeviceType_Controller,noOfControlees,macAddrMode,srcMac,dstMac
+at+urngstart=111111,1
+
