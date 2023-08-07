@@ -1,0 +1,33 @@
+COMMAND SEQUENCE:
+at+uinit=1
+at+usessioninit=111111,0
+at+ucfg=111111,1,2
+at+ucfg=111111,18,3
+at+ucfg=111111,27,25
+at+ucfg=111111,9,200
+at+ucfg=111111,242,20
+at+ucfg=111111,42,0
+at+ucfg=111111,21,2
+at+ucfg=111111,20,10
+at+ucfg
+at+urngparams=111111,0,1,1,1,0,22,11
+at+urngstart=111111,1
+
+
+COMMENTED:
+at+uinit=1 //init the device
+at+usessioninit=111111,0 //init session 111111, ranging type
+at+ucfg=111111,1,2 //RANGING_ROUND_USAGE, kUWB_RangingRoundUsage_DS_TWR
+at+ucfg=111111,18,3 //RFRAME_CONFIG, kUWB_RfFrameConfig_SP3
+at+ucfg=111111,27,25 //SLOTS_PER_RR, 25
+at+ucfg=111111,9,200 //RANGING_INTERVAL, 200
+at+ucfg=111111,242,20 //TX_POWER_ID, 20 /* 0 => MAX, 104 => MIN */
+at+ucfg=111111,42,0 //MAX_RR_RETRY, 0
+at+ucfg=111111,21,2 //SFD_ID, 2
+at+ucfg=111111,20,10 //PREAMBLE_CODE_INDEX, 10
+at+ucfg //apply params above
+at+urngparams=111111,0,1,1,1,0,22,11 //sessionID, kUWB_MultiNodeMode_UniCast,kUWB_DeviceRole_Initiator,kUWB_DeviceType_Controller,noOfControlees,macAddrMode,srcMac,dstMac
+at+urngstart=111111,1 //start ranging
+
+
+EXPECTED OUTPUT:

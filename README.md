@@ -30,4 +30,5 @@ The syntax for AT commands implemented by the ATIF firmware is available in PDF 
  - Multi-sessionn example
 
 **DCU040**:
+- add support for NVM Session storage
 

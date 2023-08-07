@@ -1,6 +1,0 @@
-at+uinit=1
-at+usessioninit=111111,0
-at+urngparams=111111,0,0,0,1,0,22,11 //sessionID, multiNodeMode,deviceRole,deviceType,noOfControlees,macAddrMode,srcMac,dstMac
-at+uappcommoncfg=111111,0
-at+urngstart=111111,1
-

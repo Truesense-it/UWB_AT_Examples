@@ -1,0 +1,69 @@
+COMMAND SEQUENCE:
+at+uinit=1
+at+usessioninit=111111,0
+at+urngparams=111111,0,0,0,1,0,22,11
+at+uappcommoncfg=111111,0
+at+urngstart=111111,1
+
+COMMENTED
+at+uinit=1 //init the device
+at+usessioninit=111111,0 //init session 111111, ranging session type
+at+urngparams=111111,0,0,0,1,0,22,11 //sessionID, multiNodeMode,deviceRole,deviceType,noOfControlees,macAddrMode,srcMac,dstMac
+at+uappcommoncfg=111111,0 //setup common config params
+at+urngstart=111111,1 //start ranging
+ 
+EXPECTED OUTPUT
+
+at+uinit=1                                                                      
+OK                                                                              
+OK+usessioninit=111111,0                                                                                                                                       
+OK                                                                              
+at+urngparams=111111,0,0,0,1,0,22,11                                            
+OK                                                                              
+at+uappcommoncfg=111111,0                                                       
+OK                                                                              
+OK+urngstart=111111,1                                                                                                                                          
+OK                                                                              
++URNGDATA: 0 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:1100,0 ,0,0,-17.107,100,0.0,0,0,0,0,0,5,-15730,-18180,0,-17100,833,0,0
+
+//+URNGDATA: macAddr (hex buffer), status (%x),nLos (%hu), distance (%PRIu16),aoa_azimuth (%d.%d),aoa_azimuth_FOM (%hu),
+//aoa_elevation (%d.%d), aoa_elevation_FOM (%hu),aoa_dest_azimuth  (%PRIi16), aoa_dest_azimuth_FOM  (%hu),
+//aoa_dest_elevation  (%PRIi16), aoa_dest_elevation_FOM  (%hu), rssi_rx1,rssi_rx2, distance2,
+//pdoaFirst,pdoaFirstIndex,pdoaSecond),pdoaSecondIndex
+                                                                                
++URNGDATA: 1 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:1100,0 ,0,0,-17.38,100,0.0,0,0,0,0,0,5,-15676,-18075,0,-17340,833,0,0 
+                                                                                
++URNGDATA: 2 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:1100,0 ,0,0,-16.100,100,0.0,0,0,0,0,0,5,-15697,-17777,0,-16684,832,0,0
+                                                                                
++URNGDATA: 3 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:1100,0 ,0,0,-17.51,100,0.0,0,0,0,0,0,5,-15633,-18186,0,-17292,834,0,0 
+                                                                                
++URNGDATA: 4 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:1100,0 ,0,0,-17.75,100,0.0,0,0,0,0,0,5,-15673,-18096,0,-17212,833,0,0 
+                                                                                
+...
+...
+...
+
++URNGDATA: 10 ,0x1b207 ,0,200 ,1, 0,1                                           
++URNGDATA:1100,0 ,0,0,-17.69,100,0.0,0,0,0,0,0,5,-15588,-17750,0,-17232,833,0,0 
+                                                                                
++URNGDATA: 11 ,0x1b207 ,0,200 ,1, 0,1                                           
++URNGDATA:1100,0 ,0,0,-15.47,100,0.0,0,0,0,0,0,5,-15766,-17680,0,-16424,833,0,0 
+                                                                                
++URNGDATA: 12 ,0x1b207 ,0,200 ,1, 0,1                                           
++URNGDATA:1100,0 ,0,0,-17.61,100,0.0,0,0,0,0,0,5,-15766,-17521,0,-17258,833,0,0 
+                                                                                
++URNGDATA: 13 ,0x1b207 ,0,200 ,1, 0,1                                           
++URNGDATA:1100,0 ,0,0,-15.26,100,0.0,0,0,0,0,0,5,-15739,-17925,0,-16496,833,0,0 
+                                                                                
++URNGDATA: 14 ,0x1b207 ,0,200 ,1, 0,1                                           
++URNGDATA:1100,0 ,0,0,-16.76,100,0.0,0,0,0,0,0,5,-15742,-17714,0,-16766,833,0,0 
+                                                                                
+...
+...
+...
+                                                                                

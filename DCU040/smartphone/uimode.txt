@@ -1,0 +1,48 @@
+COMMAND SEQUENCE:
+at+uimode
+
+
+SMARTPHONE COUNTERPART:
+on iPhone:
+- option 1: install the NXP Trimension App from https://apps.apple.com/us/app/nxp-trimensions-ar/id1606143205
+- option 2: build Apple example from source code available at https://developer.apple.com/documentation/nearbyinteraction/implementing_spatial_interactions_with_third-party_accessories
+on Android:
+- option 1: install Truesense UWB demo APK
+- option 2: build Truesense UWB demo from source code at http://github.com/Truesense-it
+
+
+
+EXPECTED OUTPUT
+
+at+uimode 
++UIMODE Task started                                                            
+Device_MAC_ID = 58:c4:1e:20:00:c8                                               
++UINFO: BLE Start adv                                                           
+                                                                                
+OK                                                                              
++UINFO: BLE Start adv                                                           
++UINFO:  Following spec 1.1                                                     
++UINFO: Shareable data configured                                               
+
+//until no app is running on mobile phone:
++URNGDATA: 0 ,0xca38 ,0,180 ,1, 0,1                                             
++URNGDATA:CED8,21                                                               
++URNGDATA: 1 ,0xca38 ,0,180 ,1, 0,1                                             
++URNGDATA:CED8,21                                                               
+
+
+//after app is started
++URNGDATA: 2 ,0xca38 ,0,180 ,1, 0,1                                             
++URNGDATA:CED8,0 ,0,21,-60.0,100,0.0,0,0,0,0,0,5,-16808,-16444,0,17720,832,0,0  
+                                                                                
++URNGDATA: 3 ,0xca38 ,0,180 ,1, 0,1                                             
++URNGDATA:CED8,0 ,0,21,-58.49,100,0.0,0,0,0,0,0,5,-16769,-16302,0,18912,833,0,0 
+                                                                                
++URNGDATA: 4 ,0xca38 ,0,180 ,1, 0,1                                             
++URNGDATA:CED8,0 ,0,19,-57.17,100,0.0,0,0,0,0,0,5,-17043,-17010,0,19024,833,0,0 
+                                                                                
++URNGDATA: 5 ,0xca38 ,0,180 ,1, 0,1                                             
++URNGDATA:CED8,0 ,0,22,-58.6,100,0.0,0,0,0,0,0,5,-16769,-16717,0,18862,833,0,0  
+                                                                                
++URNGDATA: 6 ,0xca38 ,0,180 ,1, 0,1                                             
++URNGDATA:CED8,0 ,0,21,-57.56,100,0.0,0,0,0,0,0,5,-16378,-16411,0,19068,833,0,0 

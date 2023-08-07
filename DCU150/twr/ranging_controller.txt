@@ -1,0 +1,101 @@
+COMMAND SEQUENCE:
+at+uinit=1
+at+usessioninit=111111,0
+at+urngparams=111111,0,1,1,1,0,11,22
+at+uappcommoncfg=111111,0
+at+urngstart=111111,1
+
+COMMENTED:
+at+uinit=1 //init the device
+at+usessioninit=111111,0 //init session 111111, ranging session type
+at+urngparams=111111,0,1,1,1,0,11,22 //sessionID,multiNodeMode,deviceRole,deviceType,noOfControlees,macAddrMode,srcMac,dstMac
+at+uappcommoncfg=111111,0 //setup common config params
+at+urngstart=111111,1 //start ranging
+
+
+EXPECTED OUTPUT:
+at+uinit=1                                                                      
+OK                                                                              
+OK+usessioninit=111111,0                                                        
+                                                                                
+OK                                                                              
+at+urngparams=111111,0,1,1,1,0,11,22                                            
+OK                                                                              
+at+uappcommoncfg=111111,0                                                       
+OK                                                                              
+OK+urngstart=111111,1                                                           
+                                                                                
+OK
+//if the controlee conterpart is still not running                                                                               
++URNGDATA: 0 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:2200,21                                                               
++URNGDATA: 1 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:2200,21                                                               
++URNGDATA: 2 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:2200,21                                                               
++URNGDATA: 3 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:2200,21                                                               
++URNGDATA: 4 ,0x1b207 ,0,200 ,1, 0,1                                            
++URNGDATA:2200,21                                                               
+
+...
+...
+...
+
++URNGDATA: 161 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,21                                                               
++URNGDATA: 162 ,0x1b207 ,0,200 ,1, 0,1
+
+//once controlee counterpart is running
+ 
+                                                                                
++URNGDATA: 163 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-55.76,100,0.0,0,0,0,0,0,5,-15432,-14914,0,19390,832,0,0
+
+//+URNGDATA: macAddr (hex buffer), status (%x),nLos (%hu), distance (%PRIu16),aoa_azimuth (%d.%d),aoa_azimuth_FOM (%hu),
+//aoa_elevation (%d.%d), aoa_elevation_FOM (%hu),aoa_dest_azimuth  (%PRIi16), aoa_dest_azimuth_FOM  (%hu),
+//aoa_dest_elevation  (%PRIi16), aoa_dest_elevation_FOM  (%hu), rssi_rx1,rssi_rx2, distance2,
+//pdoaFirst,pdoaFirstIndex,pdoaSecond),pdoaSecondIndex
+                                                                                
++URNGDATA: 164 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-50.34,100,0.0,0,0,0,0,0,5,-15305,-14968,0,20082,832,0,0  
+                                                                                
++URNGDATA: 165 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-57.60,100,0.0,0,0,0,0,0,5,-15335,-14827,0,19074,833,0,0  
+                                                                                
++URNGDATA: 166 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-58.32,100,0.0,0,0,0,0,0,5,-15441,-15167,0,18892,833,0,0  
+                                                                                
++URNGDATA: 167 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-54.84,100,0.0,0,0,0,0,0,5,-15266,-14773,0,19548,832,0,0  
+                                                                                
++URNGDATA: 168 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-60.115,100,0.0,0,0,0,0,0,5,-15239,-14908,0,18692,833,0,0 
+                                                                                
++URNGDATA: 169 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-55.123,100,0.0,0,0,0,0,0,5,-15468,-14980,0,19444,832,0,0 
+                                                                                
++URNGDATA: 170 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-56.29,100,0.0,0,0,0,0,0,5,-15585,-15010,0,19186,833,0,0  
+                                                                                
++URNGDATA: 171 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-59.67,100,0.0,0,0,0,0,0,5,-15438,-14965,0,18784,833,0,0  
+                                                                                
++URNGDATA: 172 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-56.99,100,0.0,0,0,0,0,0,5,-15459,-15176,0,19268,832,0,0  
+                                                                                
++URNGDATA: 173 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-59.26,100,0.0,0,0,0,0,0,5,-15351,-14854,0,18736,833,0,0  
+                                                                                
++URNGDATA: 174 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-56.20,100,0.0,0,0,0,0,0,5,-15450,-15188,0,19176,832,0,0  
+                                                                                
++URNGDATA: 175 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-56.118,100,0.0,0,0,0,0,0,5,-15203,-14905,0,19290,832,0,0 
+                                                                                
++URNGDATA: 176 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-58.60,100,0.0,0,0,0,0,0,5,-15546,-14959,0,18924,833,0,0  
+                                                                                
++URNGDATA: 177 ,0x1b207 ,0,200 ,1, 0,1                                          
++URNGDATA:2200,0 ,0,0,-55.23,100,0.0,0,0,0,0,0,5,-15447,-15037,0,19328,833,0,0  
+                             
