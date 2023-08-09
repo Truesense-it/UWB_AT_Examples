@@ -21,6 +21,7 @@ The ATIF firmware expects a newline character ('\n') as the terminator for each 
 ## Documentation
 
 The syntax for AT commands implemented by the ATIF firmware is available in PDF format under the docs folder of this repository.
+PLEASE NOTE: the DCU040 module implements Low Power Mode by default and the timeout is set to 60 seconds. If no commands are issued within the timeout while the system is not ranging then all the previous commands must be executed again.
 
 ## TODO
 
@@ -31,4 +32,4 @@ The syntax for AT commands implemented by the ATIF firmware is available in PDF 
 
 **DCU040**:
 - add support for NVM Session storage
-
+- wake up on accelerometer
