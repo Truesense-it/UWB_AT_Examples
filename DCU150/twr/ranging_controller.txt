@@ -54,8 +54,8 @@ OK
 
 //+URNGDATA: macAddr (hex buffer), status (%x),nLos (%hu), distance (%PRIu16),aoa_azimuth (%d.%d),aoa_azimuth_FOM (%hu),
 //aoa_elevation (%d.%d), aoa_elevation_FOM (%hu),aoa_dest_azimuth  (%PRIi16), aoa_dest_azimuth_FOM  (%hu),
-//aoa_dest_elevation  (%PRIi16), aoa_dest_elevation_FOM  (%hu), rssi_rx1,rssi_rx2, distance2,
-//pdoaFirst,pdoaFirstIndex,pdoaSecond),pdoaSecondIndex
+//aoa_dest_elevation  (%PRIi16), aoa_dest_elevation_FOM  (%hu), slot_index (%hu), rssi_rx1 (%PRIi16),rssi_rx2 (%PRIi16), 
+//distance2 (%PRIu16), pdoaFirst (%PRIi16), pdoaFirstIndex (%PRIu16),pdoaSecond (%PRIi16),pdoaSecondIndex (%PRIu16)
                                                                                 
 +URNGDATA: 164 ,0x1b207 ,0,200 ,1, 0,1                                          
 +URNGDATA:2200,0 ,0,0,-50.34,100,0.0,0,0,0,0,0,5,-15305,-14968,0,20082,832,0,0  
