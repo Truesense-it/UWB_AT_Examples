@@ -1,0 +1,208 @@
+COMMAND SEQUENCE:
+
+FOR THE ANCHOR
+
+ANCHOR SESSION #1
+
+at+uinit=1
+at+usessioninit=111111,0
+at+ucfg=111111,1,2
+at+ucfg=111111,18,3
+at+ucfg=111111,27,25
+at+ucfg=111111,9,200
+at+ucfg=111111,42,0
+at+ucfg=111111,21,2
+at+ucfg=111111,20,10
+at+ucfg
+at+uappcommoncfg=111111,0
+at+urngparams=111111,0,0,0,1,0,11,22
+at+urngstart=111111,1
+
+ANCHOR SESSION #2
+
+at+usessioninit=222222,0
+at+uappcommoncfg=222222,0
+at+ucfg=222222,1,2
+at+ucfg=222222,18,3
+at+ucfg=222222,27,25
+at+ucfg=222222,9,200
+at+ucfg=222222,42,0
+at+ucfg=222222,21,2
+at+ucfg=222222,20,11
+at+ucfg
+at+urngparams=222222,0,0,0,1,0,33,44
+at+urngstart=222222,1
+
+
+FOR THE TAGS
+
+TAG#1
+
+at+uinit=1
+at+usessioninit=111111,0
+at+ucfg=111111,1,2
+at+ucfg=111111,18,3
+at+ucfg=111111,27,25
+at+ucfg=111111,9,200
+at+ucfg=111111,242,20
+at+ucfg=111111,42,0
+at+ucfg=111111,21,2
+at+ucfg=111111,20,10
+at+ucfg
+at+urngparams=111111,0,1,1,1,0,22,11
+at+urngstart=111111,1
+
+TAG #2
+
+at+uinit=1
+at+usessioninit=222222,0
+at+ucfg=222222,1,2
+at+ucfg=222222,18,3
+at+ucfg=222222,27,25
+at+ucfg=222222,9,200
+at+ucfg=222222,242,20
+at+ucfg=111111,42,0
+at+ucfg=222222,21,2
+at+ucfg=222222,20,11
+at+ucfg
+at+urngparams=222222,0,1,1,1,0,44,33
+at+urngstart=222222,1
+
+
+
+WITH COMMENTS
+
+ANCHOR SESSION #1
+
+at+uinit=1 //init the device
+at+usessioninit=111111,0 //init session 111111, ranging type
+at+ucfg=111111,1,2 //RANGING_ROUND_USAGE, kUWB_RangingRoundUsage_DS_TWR
+at+ucfg=111111,18,3 //RFRAME_CONFIG, kUWB_RfFrameConfig_SP3
+at+ucfg=111111,27,25 //SLOTS_PER_RR, 25
+at+ucfg=111111,9,200 //RANGING_INTERVAL, 200
+at+ucfg=111111,42,0 //MAX_RR_RETRY, 0
+at+ucfg=111111,21,2 //SFD_ID, 2
+at+ucfg=111111,20,10 //PREAMBLE_CODE_INDEX, 10
+at+ucfg // apply params above
+at+uappcommoncfg=111111,0 //apply other common config params
+at+urngparams=111111,0,0,0,1,0,11,22 //sessionID, kUWB_MultiNodeMode_UniCast,kUWB_DeviceRole_Responder,kUWB_DeviceType_Controlee,noOfControlees,macAddrMode,srcMac,dstMac
+at+urngstart=111111,1
+
+ANCHOR SESSION #2
+
+at+usessioninit=222222,0 //init the session, ranging type
+at+uappcommoncfg=222222,0 //apply common config
+at+ucfg=222222,1,2 //RANGING_ROUND_USAGE, kUWB_RangingRoundUsage_DS_TWR
+at+ucfg=222222,18,3 //RFRAME_CONFIG, kUWB_RfFrameConfig_SP3
+at+ucfg=222222,27,25 //SLOTS_PER_RR, 25
+at+ucfg=222222,9,200 //RANGING_INTERVAL, 200
+at+ucfg=222222,42,0 //MAX_RR_RETRY, 0
+at+ucfg=222222,21,2 //SFD_ID, 2
+at+ucfg=222222,20,11 //PREAMBLE_CODE_INDEX, 11
+at+ucfg // apply params above
+at+urngparams=222222,0,0,0,1,0,33,44 //sessionID, kUWB_MultiNodeMode_UniCast,kUWB_DeviceRole_Responder,kUWB_DeviceType_Controlee,noOfControlees,macAddrMode,srcMac,dstMac
+at+urngstart=222222,1
+
+TAG#1
+
+at+uinit=1 //init the device
+at+usessioninit=111111,0 //init session 111111, ranging type
+at+ucfg=111111,1,2 //RANGING_ROUND_USAGE, kUWB_RangingRoundUsage_DS_TWR
+at+ucfg=111111,18,3 //RFRAME_CONFIG, kUWB_RfFrameConfig_SP3
+at+ucfg=111111,27,25 //SLOTS_PER_RR, 25
+at+ucfg=111111,9,200 //RANGING_INTERVAL, 200
+at+ucfg=111111,242,20 //MAX_RR_RETRY, 0
+at+ucfg=111111,42,0  //MAX_RR_RETRY, 0
+at+ucfg=111111,21,2  //SFD_ID, 2
+at+ucfg=111111,20,10 //PREAMBLE_CODE_INDEX, 10
+at+ucfg // apply params above
+at+urngparams=111111,0,1,1,1,0,22,11
+at+urngstart=111111,1 //sessionID, kUWB_MultiNodeMode_UniCast,kUWB_DeviceRole_Initiator,kUWB_DeviceType_Controller,noOfControlees,macAddrMode,srcMac,dstMac
+
+TAG#2
+
+at+uinit=1 //init the device
+at+usessioninit=222222,0 //init session 222222, ranging type
+at+ucfg=222222,1,2 //RANGING_ROUND_USAGE, kUWB_RangingRoundUsage_DS_TWR
+at+ucfg=222222,18,3 //RFRAME_CONFIG, kUWB_RfFrameConfig_SP3
+at+ucfg=222222,27,25 //SLOTS_PER_RR, 25
+at+ucfg=222222,9,200 //RANGING_INTERVAL, 200
+at+ucfg=222222,242,20 //MAX_RR_RETRY, 0
+at+ucfg=222222,42,0  //MAX_RR_RETRY, 0
+at+ucfg=222222,21,2  //SFD_ID, 2
+at+ucfg=222222,20,11 //PREAMBLE_CODE_INDEX, 10
+at+ucfg // apply params above
+at+urngparams=222222,0,1,1,1,0,44,33
+at+urngstart=222222,1 //sessionID, kUWB_MultiNodeMode_UniCast,kUWB_DeviceRole_Initiator,kUWB_DeviceType_Controller,noOfControlees,macAddrMode,srcMac,dstMac
+
+
+
+EXPECTED OUTPUT
+
+ON ANCHOR:
+....
+....
+....
++URNGDATA: 7565 ,0x1b207 ,0,200 ,1, 0,1                                         
++URNGDATA:2200,0 ,0,100,-48.0,100,0.0,0,0,0,0,0,5,-18784,-19280,0,-20662,6.64,00
+                                                                                
++URNGDATA: 7690 ,0x3640e ,0,200 ,1, 0,1                                         
++URNGDATA:4400,0 ,0,27,-9.73,100,0.0,0,0,0,0,0,5,-14748,-16651,0,-1888,6.63,0.00
+                                                                                
++URNGDATA: 7566 ,0x1b207 ,0,200 ,1, 0,1                                         
++URNGDATA:2200,0 ,0,101,-48.0,100,0.0,0,0,0,0,0,5,-19007,-19434,0,-20908,6.64,00
+                                                                                
++URNGDATA: 7691 ,0x3640e ,0,200 ,1, 0,1                                         
++URNGDATA:4400,0 ,0,24,-9.98,100,0.0,0,0,0,0,0,5,-14845,-16765,0,-1822,6.63,0.00
+                                                                                
++URNGDATA: 7567 ,0x1b207 ,0,200 ,1, 0,1                                         
++URNGDATA:2200,0 ,0,100,-48.0,100,0.0,0,0,0,0,0,5,-19048,-19401,0,-20312,6.64,00
+                                                                                
++URNGDATA: 7692 ,0x3640e ,0,200 ,1, 0,1                                         
++URNGDATA:4400,0 ,0,23,-8.21,100,0.0,0,0,0,0,0,5,-14574,-16476,0,-1686,6.62,0.00
+....
+....
+....
+ON TAG1
+....
+....
+....
++URNGDATA:1100,0 ,0,101,0.0,0,0.0,0,0,0,0,0,0                                   
++URNGDATA: 27712 ,0x1b207 ,0,200 ,1, 0,1                                        
++URNGDATA:1100,0 ,0,100,0.0,0,0.0,0,0,0,0,0,0                                   
++URNGDATA: 27713 ,0x1b207 ,0,200 ,1, 0,1                                        
++URNGDATA:1100,0 ,0,100,0.0,0,0.0,0,0,0,0,0,0                                   
++URNGDATA: 27714 ,0x1b207 ,0,200 ,1, 0,1                                        
++URNGDATA:1100,0 ,0,101,0.0,0,0.0,0,0,0,0,0,0                                   
++URNGDATA: 27715 ,0x1b207 ,0,200 ,1, 0,1                                        
++URNGDATA:1100,0 ,0,98,0.0,0,0.0,0,0,0,0,0,0                                    
++URNGDATA: 27716 ,0x1b207 ,0,200 ,1, 0,1                                        
++URNGDATA:1100,0 ,0,98,0.0,0,0.0,0,0,0,0,0,0                                    
++URNGDATA: 27717 ,0x1b207 ,0,200 ,1, 0,1                                        
++URNGDATA:1100,0 ,0,100,0.0,0,0.0,0,0,0,0,0,0
+....
+....
+....
+
+
+ON TAG2
+
+....
+....
+....
++URNGDATA:3300,0 ,0,26,0.0,0,0.0,0,0,0,0,0,0                                    
++URNGDATA: 11997 ,0x3640e ,0,200 ,1, 0,1                                        
++URNGDATA:3300,0 ,0,23,0.0,0,0.0,0,0,0,0,0,0                                    
++URNGDATA: 11998 ,0x3640e ,0,200 ,1, 0,1                                        
++URNGDATA:3300,0 ,0,26,0.0,0,0.0,0,0,0,0,0,0                                    
++URNGDATA: 11999 ,0x3640e ,0,200 ,1, 0,1                                        
++URNGDATA:3300,0 ,0,27,0.0,0,0.0,0,0,0,0,0,0                                    
++URNGDATA: 12000 ,0x3640e ,0,200 ,1, 0,1                                        
++URNGDATA:3300,0 ,0,26,0.0,0,0.0,0,0,0,0,0,0                                    
++URNGDATA: 12001 ,0x3640e ,0,200 ,1, 0,1                                        
++URNGDATA:3300,0 ,0,22,0.0,0,0.0,0,0,0,0,0,0                                    
++URNGDATA: 12002 ,0x3640e ,0,200 ,1, 0,1                                        
++URNGDATA:3300,0 ,0,24,0.0,0,0.0,0,0,0,0,0,0
+....
+....
+....

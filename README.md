@@ -28,7 +28,7 @@ PLEASE NOTE: the DCU040 module implements Low Power Mode by default and the time
 **DCU150**:
 
  - DL-TDOA examples 
- - Multi-sessionn example
+ - Multicast example 
 
 **DCU040**:
 - add support for NVM Session storage
